@@ -1,0 +1,27 @@
+{
+    "title" :"Jumpstart",
+    "motto" : "Algorithm Visualized",
+    "imageSource" : "../assets/neural.png",
+    "topbarList": [
+        {
+            "id": 1,
+            "name": "About",
+            "link": "about"
+        },
+        {
+            "id": 2,
+            "name": "Donate",
+            "link": "donate"
+        },
+        {
+            "id": 3,
+            "name": "Contact Us",
+            "link": "contact"
+        },
+        {
+            "id": 4,
+            "name": "Join",
+            "link": "join"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+<div class="app-topbar">
+    <img  class="app-topbar-img" src= "{{imageSource}}"/>
+  
+  
+  <div class=".app-topbar-title-container">
+  <div  class="app-topbar-title">
+      {{title}}
+    </div>
+    <div  class="app-topbar-motto">
+      {{motto}}
+    </div>
+  </div>
+    
+    <div class="app-topbar-space"></div>
+  <div class="app-topbar-left">
+  <div class="app-topbar-left-item" *ngFor="let item of topBarItems">
+      <a routerLink="{{item.link}}">{{item.name}}</a>
+      
+    </div>
+  
+  </div>
+  </div>
