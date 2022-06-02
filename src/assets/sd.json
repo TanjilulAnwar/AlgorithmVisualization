@@ -1,7 +1,7 @@
 {
     "title" :"Jumpstart",
     "motto" : "Algorithm Visualized",
-    "imageSource" : "../assets/circular-arrows.gif",
+    "imageSource" : "../assets/reverse-engineering.png",
     "topbarList": [
         {
             "id": 1,
@@ -23,5 +23,30 @@
             "name": "Join",
             "link": "join"
         }
+    ],
+
+    "footerList": [
+        {
+            "id": 1,
+            "name": "Contact Us",
+            "link": "contact"
+        },
+        {
+            "id": 2,
+            "name": "Feedback",
+            "link": "feedback"
+        },
+        {
+            "id": 3,
+            "name": "Suggestions",
+            "link": "suggestion"
+        },
+        {
+            "id": 4,
+            "name": "Address",
+            "link": "Address"
+        }
     ]
+
+
 }

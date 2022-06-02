@@ -4,7 +4,7 @@
 
 .app-topbar {
     padding: 10px;
-    background-color: white;
+    background-color: var(--rich-black);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0px 11px 21px -5px rgba(0,0,0,0.26);
     -webkit-box-shadow: 0px 11px 21px -5px rgba(0,0,0,0.26);
@@ -22,7 +22,7 @@
 }
 
 .app-topbar-title {
-    color: #7facd6;
+    color: var(--cerulean-blue);
     font-size: 17px;
     font-weight: 600;
     padding-left: 10px;
@@ -30,7 +30,7 @@
 }
 
 .app-topbar-motto {
-    color: #7facd6;
+    color: var(--cerulean-blue);
     font-size: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -48,19 +48,8 @@
 .app-topbar-left-item {
     padding-left: 5px;
     padding-right: 5px;
-    color: #7facd6;
+    color:  var(--cerulean-blue);
     font-size: 12px;
 }
 
 
-a,
-a:link,
-a:visited,
-a:hover,
-a:active {
-    color: inherit;
-    text-decoration: inherit;
-    font-weight: inherit;
-    margin: 0px;
-    padding: 0px;
-}

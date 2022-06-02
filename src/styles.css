@@ -1,10 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root {
+    --charcoal: #2F4858;
+    --rich-black: #00171F;
+    --cerulean-blue: #00A7E1;
+    --white: #ffffff;
+    --prussian-blue: #003459;
+    --celadon-blue: #007EA7;
+   
+  }
 
 body{
     margin: 0px;
     padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+    margin: 0px;
+    padding: 0px;
+}

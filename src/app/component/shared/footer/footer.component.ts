@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationModel } from 'src/app/models/navigation.model';
+import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  footerItems: NavigationModel[] = [];
+
+  constructor(private appSettingsService: AppSettingsService) { 
+    
+    this.populateFooterItems();
+  }
 
   ngOnInit(): void {
+  }
+
+  populateFooterItems() {
+    this.appSettingsService.getJSON().subscribe(data => {
+  
+      this.footerItems = data.footerList
+
+    });
+
   }
 
 }

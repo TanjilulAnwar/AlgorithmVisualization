@@ -1,0 +1,19 @@
+.app-footer{
+    
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:auto;   /* Height of the footer */
+    background: var(--rich-black);
+    align-items: center;
+}
+.footer-div{
+    padding: 10px;
+    display: block;
+}
+.footer-item{
+    padding: 5px;
+    font-size: 12px;
+    display: block;
+    color:  var(--cerulean-blue);
+}
