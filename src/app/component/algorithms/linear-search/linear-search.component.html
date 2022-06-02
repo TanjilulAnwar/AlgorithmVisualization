@@ -1,0 +1,24 @@
+<div class="app-linear-search">
+    <div class="app-linear-search-control">
+        <input min="0" max="999999" [(ngModel)]="inputValue" (keyup.enter)="pushItem()" class="app-linear-search-input" type="number" />
+        <button class="app-linear-search-button" (click)="pushItem()">Insert</button>
+        <button class="app-linear-search-button" (click)="popItem()">Remove</button>
+        <input min="0" max="999999" [(ngModel)]="searchValue" (keyup.enter)="linearSearch()"  class="app-linear-search-input" type="number"/>
+        <button class="app-linear-search-button" (click)="linearSearch()">Linear Search</button>
+    
+        <span class="app-notice" >{{note}}</span>
+    </div>
+
+    <div class="app-linear-search-canvas">
+        <!-- [ngClass]="(epicActive && (activeEpicId === epic.id)) ? 'side-panel-item-active' :'side-panel-item-passive'" -->
+    <div class="app-node" 
+    *ngFor="let item of inputStack;let indexOfelement=index;"
+    [ngClass]="indexOfelement == activeIndex? 'app-node-active' :'app-node'">
+            <div class="app-node-element">
+                {{item}}
+            </div>
+    </div>
+    </div>
+
+
+</div>

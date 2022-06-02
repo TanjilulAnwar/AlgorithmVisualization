@@ -1,0 +1,107 @@
+.app-linear-search{
+    display: block;
+}
+.app-linear-search-control{
+    padding: 20px 20px 20px 0px;
+}
+.app-linear-search-button{
+    margin: 5px;
+    padding: 5px;
+    color: var(--cerulean-blue);
+    background:  var(--rich-black);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    outline: 0px;
+}
+
+.app-linear-search-button:hover{
+    color:var(--rich-black) ;
+    background: var(--cerulean-blue);
+    border: 2px solid  var(--cerulean-blue);
+}
+.app-linear-search-input{
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid var(--prussian-blue);
+    border-radius: 5px;
+    outline: 0px;
+
+}
+
+.app-node{
+
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color:#2F8F9D ;
+    border-radius: 5px;
+    color: #B3E8E5;
+    width: auto;
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.app-node-active{
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color:tomato ;
+    border-radius: 5px;
+    color: brown;
+    width: auto;
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.app-node-element{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.app-linear-search-canvas{
+    /* display: flex; */
+    padding: 40px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ; /* set column sizes here */
+    grid-template-rows: 
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto /* we want two rows */
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto
+    auto auto auto auto auto;
+     grid-gap: 5px;  
+    /* how far between cells? */
+    grid-auto-flow: row; /* fill in by column, not row */
+
+}
+
+.app-notice{
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: tomato;
+    font-size: 15px;
+
+}
+
+.example-margin {
+    margin: 8px;
+  }
