@@ -1,11 +1,13 @@
 <div class="app-linear-search">
+    <div class="app-linear-search-title">Linear Search</div>
+
     <div class="app-linear-search-control">
         <input min="0" max="999999" [(ngModel)]="inputValue" (keyup.enter)="pushItem()" class="app-linear-search-input" type="number" />
         <button class="app-linear-search-button" (click)="pushItem()">Insert</button>
         <button class="app-linear-search-button" (click)="popItem()">Remove</button>
         <input min="0" max="999999" [(ngModel)]="searchValue" (keyup.enter)="linearSearch()"  class="app-linear-search-input" type="number"/>
         <button class="app-linear-search-button" (click)="linearSearch()">Linear Search</button>
-    
+        <button *ngIf="searchActive" class="app-linear-search-button-abort" (click)="abort=true">Abort</button>
         <span class="app-notice" >{{note}}</span>
     </div>
 
@@ -17,25 +19,11 @@
 
     </div>
         
-         <!-- <mat-slider
-              class="example-margin"
-              [disabled]="disabled"
-              [invert]="invert"
-              [max]="max"
-              [min]="min"
-              [step]="step"
-              [thumbLabel]="thumbLabel"
-              [tickInterval]="getSliderTickInterval()"
-              [(ngModel)]="timer"
-              [vertical]="vertical"
-              aria-labelledby="example-name-label">
-          </mat-slider> -->
-
-          
+   
         
 
-  
-    <div class="app-linear-search-canvas">
+   <div class="app-linear-search-container">
+ <div class="app-linear-search-canvas">
         <!-- [ngClass]="(epicActive && (activeEpicId === epic.id)) ? 'side-panel-item-active' :'side-panel-item-passive'" -->
     <div class="app-node" 
     *ngFor="let item of inputStack;let indexOfelement=index;"
@@ -45,6 +33,18 @@
             </div>
     </div>
     </div>
+
+
+    <div class="app-linear-search-code-viewer">
+    <div [ngClass]="(lineNo == 1)? 'app-line-code-active' :'app-line-code'">For : i=0 to ArrayLength - 1</div>
+    <div [ngClass]="(lineNo == 2)? 'app-line-code-active' :'app-line-code'"><span></span>If : Array[i] = SearchValue</div>
+    <div [ngClass]="(lineNo == 3)? 'app-line-code-active' :'app-line-code'"> <span></span> <span></span>  item found </div>
+    <div [ngClass]="(lineNo == 4)? 'app-line-code-active' :'app-line-code'"><span></span>i++</div>
+    <div [ngClass]="(lineNo == 5)? 'app-line-code-active' :'app-line-code'">item Not found </div>
+    </div>
+
+   </div>
+   
 
 
 </div>

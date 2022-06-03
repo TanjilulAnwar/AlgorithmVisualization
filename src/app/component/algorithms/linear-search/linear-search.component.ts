@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArgumentOutOfRangeError } from 'rxjs';
 
 @Component({
   selector: 'app-linear-search',
@@ -9,44 +10,16 @@ export class LinearSearchComponent implements OnInit {
 
   activeIndex: any;
   searchActive: boolean | undefined = false;
+  abort: boolean | undefined = false;
   inputValue: any;
   searchValue:any;
   note = "";
   inputStack: number[] = []
-
-///slider///////////////
-autoTicks = false;
-disabled = false;
-invert = false;
-max = 100;
-min = 0;
-showTicks = false;
-step = 1;
-thumbLabel = false;
-timer = 0;
-multiple = 10;
-vertical = false;
-tickInterval = 1;
-
-getSliderTickInterval(): number | 'auto' {
-  if (this.showTicks) {
-    return this.autoTicks ? 'auto' : this.tickInterval;
-  }
-
-  return 0;
-}
-///slider///////////////
+  lineNo=0
+  timer =1
 
 
 
-
-
-
-
-
-
-
-  
   constructor() {
 
     this.activeIndex = undefined;
@@ -84,12 +57,35 @@ getSliderTickInterval(): number | 'auto' {
     this.inputStack.pop();
   }
 
+async lineDelay(lineNo:any){
+  this.lineNo =lineNo
+  await this.delay(this.timer*10)
+}
+
+async isAborted(){
+  if(this.abort){
+    this.abort = false;
+    this.searchValue =null;
+    this.activeIndex = undefined;
+    this.note = "Search Aborted!";
+    await this.delay(1000);
+    this.searchActive=false
+    return true;
+  }
+  return false;
+}
+
+
+
   async linearSearch() {
 
+    
     if (this.searchValue === undefined || this.searchValue === null) {
       this.note = "Please enter a value to search !"
       return;
     }
+
+    var temp = this.searchValue 
 
     this.activeIndex = undefined;
     var len = this.inputStack.length;
@@ -99,23 +95,52 @@ getSliderTickInterval(): number | 'auto' {
     }
 
 
-    //this.searchActive = true;
+    this.searchActive = true;
     this.note = "Searching  for "+this.searchValue+" ...."
     for (var i = 0; i < len; i++) {
-      this.activeIndex = i;
-      await this.delay(this.timer *10);
-      if (this.inputStack[i] == this.searchValue) {
-        this.note = this.searchValue + " found at index " + i;
-        this.searchValue =null;
-        // this.searchActive = false;
+     
+
+      // if(this.abort){
+      //   this.abort = false;
+      //   this.searchValue =null;
+      //   this.activeIndex = undefined;
+      //   this.note = "Search Aborted!";
+      //   await this.delay(1000);
+      //   this.searchActive=false
+      //   return;
+      // }
+     
+      if(await this.isAborted()){
         return;
       }
 
+
+      this.activeIndex = i;
+      if(i>0){
+        await this.lineDelay(4)}
+     
+      await this.lineDelay(1)
+      
+      await this.delay(this.timer *10);
+
+      await this.lineDelay(2)
+
+      if (this.inputStack[i] == this.searchValue) {
+        await this.lineDelay(3)
+        this.note = temp + " found at index " + i;
+        this.searchValue =null;
+        this.searchActive = false;
+        
+        return;
+      }
+      
+
     }
 
-    //this.searchActive = false;
+    await this.lineDelay(5)
+    this.searchActive = false;
     this.activeIndex = undefined;
-    this.note = this.searchValue + " not found in array!";
+    this.note = temp + " not found in array!";
     this.searchValue =null;
   }
 
