@@ -1,5 +1,40 @@
-.app-home{
-    height: auto;
-    padding: 20px;;
-   
+.app-home {
+     height: auto; 
+    padding: 20px;
+
+}
+
+.app-home-card {
+    padding: 50px;
+    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+width: 40%;
+    box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.28);
+}
+
+.app-home-card-title {
+font-size: 25px;
+font-weight: 600;
+color:#2F8F9D;
+padding: 5px;
+
+}
+
+.app-home-card-item{
+    margin-top:10px ;
+    font-size: 15px;
+    width: inherit;
+    font-weight: 600;
+    color:#2F8F9D;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.app-home-card-item:hover{
+  background-color: #2f8e9d2a;
+  color: #2F8F9D;
 }

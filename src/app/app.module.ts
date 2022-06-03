@@ -19,7 +19,7 @@ import {MatCardModule}from '@angular/material/card';
    
     NavBarComponent,
     FooterComponent,
-    LinearSearchComponent
+  
     
   ],
   imports: [

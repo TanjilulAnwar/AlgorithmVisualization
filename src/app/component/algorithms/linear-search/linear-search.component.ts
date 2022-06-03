@@ -23,7 +23,7 @@ export class LinearSearchComponent implements OnInit {
   constructor() {
 
     this.activeIndex = undefined;
-    this.inputStack = [2, 43, 556, 23, 564, 34, 64, 9445]
+    this.inputStack = [2, 7, 11, 34, 66, 95, 15, 101]
   }
 
   ngOnInit(): void {
