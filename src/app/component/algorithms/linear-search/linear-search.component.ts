@@ -13,6 +13,39 @@ export class LinearSearchComponent implements OnInit {
   searchValue:any;
   note = "";
   inputStack: number[] = []
+
+///slider///////////////
+autoTicks = false;
+disabled = false;
+invert = false;
+max = 100;
+min = 0;
+showTicks = false;
+step = 1;
+thumbLabel = false;
+timer = 0;
+multiple = 10;
+vertical = false;
+tickInterval = 1;
+
+getSliderTickInterval(): number | 'auto' {
+  if (this.showTicks) {
+    return this.autoTicks ? 'auto' : this.tickInterval;
+  }
+
+  return 0;
+}
+///slider///////////////
+
+
+
+
+
+
+
+
+
+
   
   constructor() {
 
@@ -66,10 +99,11 @@ export class LinearSearchComponent implements OnInit {
     }
 
 
-    this.searchActive = true;
+    //this.searchActive = true;
+    this.note = "Searching  for "+this.searchValue+" ...."
     for (var i = 0; i < len; i++) {
       this.activeIndex = i;
-      await this.delay(300);
+      await this.delay(this.timer *10);
       if (this.inputStack[i] == this.searchValue) {
         this.note = this.searchValue + " found at index " + i;
         this.searchValue =null;

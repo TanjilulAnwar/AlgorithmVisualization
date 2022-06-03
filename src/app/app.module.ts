@@ -11,6 +11,7 @@ import { FooterComponent } from './component/shared/footer/footer.component';
 import { LinearSearchComponent } from './component/algorithms/linear-search/linear-search.component';
 import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatCardModule}from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatSliderModule} from '@angular/material/slider';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatSliderModule
+    MatSliderModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
